@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Burger extends JFrame {
 
@@ -51,11 +52,10 @@ public class Burger extends JFrame {
 
     public Burger(String title) {
         super(title);
-        pnl.setPreferredSize(new Dimension(800, 700));
+        pnl.setPreferredSize(new Dimension(1200, 700));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(pnl);
         this.pack();
-
 
 
         btnPedido.addActionListener(new ActionListener() {
@@ -64,38 +64,66 @@ public class Burger extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     double precioTotal = 8;//el menu basico vale 8 euros
+                    ArrayList opcionesElegidas = new ArrayList<>();
 
                     //si elige las opciones con coste extra se le anade esto al precioTotal
-                    if (ternera.isSelected())
+                    if (ternera.isSelected()) {
                         precioTotal = precioTotal + 1;
-                    if (vegana.isSelected())
+                        opcionesElegidas.add("ternera");
+                    }
+                    if (vegana.isSelected()){
                         precioTotal = precioTotal + 1;
-                    if (caseras.isSelected())
+                        opcionesElegidas.add("vegana");
+                    }
+                    if (caseras.isSelected()){
                         precioTotal = precioTotal + 1;
-                    if (dobleOpcional.isSelected())
+                        opcionesElegidas.add("patatas caseras");
+                    }
+                    if (dobleOpcional.isSelected()){
                         precioTotal = precioTotal + 2;
-                    if (quesoOpcional.isSelected())
+                        opcionesElegidas.add("hamburgesa doble");
+                    }
+                    if (quesoOpcional.isSelected()){
                         precioTotal = precioTotal + 0.5;
-                    if (patatasOpcional.isSelected())
+                        opcionesElegidas.add("extra queso");
+                    }
+                    if (patatasOpcional.isSelected()){
                         precioTotal = precioTotal + 1;
+                        opcionesElegidas.add("extra patatas");
+                    }
 
                     //si ha elegido salsas, contamos cuantas y anadimos al precioTotal
                     int cuantosDeKetchup = (int) spinnerKetchup.getValue();
-                    if (cuantosDeKetchup > 0)
+                    if (cuantosDeKetchup > 0){
+                        opcionesElegidas.add("ketchup");
                         precioTotal = precioTotal + 0.5 * cuantosDeKetchup;
+                    }
+
                     int cuantosDeBarbacoa = (int) spinnerBarbacoa.getValue();
-                    if (cuantosDeBarbacoa > 0)
+                    if (cuantosDeBarbacoa > 0){
+                        opcionesElegidas.add("salsa barbacoa");
                         precioTotal = precioTotal + 0.5 * cuantosDeBarbacoa;
+                    }
+
                     int cuantosDeMostaza = (int) spinnerMostaza.getValue();
-                    if (cuantosDeMostaza > 0)
+                    if (cuantosDeMostaza > 0){
+                        opcionesElegidas.add("mostaza");
                         precioTotal = precioTotal + 0.5 * cuantosDeMostaza;
+                    }
+
                     int cuantosDeThai = (int) spinnerThai.getValue();
-                    if (cuantosDeThai > 0)
+                    if (cuantosDeThai > 0){
+                        opcionesElegidas.add("salsa thai");
                         precioTotal = precioTotal + 0.5 * cuantosDeThai;
+                    }
+
 
                     //si recoge el pedido en el local le restamos un 20%
-                    if (recogidaLocal.isSelected())
+                    if (recogidaLocal.isSelected()){
+                        opcionesElegidas.add("recogida en el local");
                         precioTotal = precioTotal - 0.2 * precioTotal;
+                    }
+
 
                     //calculamos el precio con IVA
                     double IVA = 0.21 * precioTotal;
@@ -103,14 +131,43 @@ public class Burger extends JFrame {
 
                     //si elige cerveza comprobamos que es mayor de edad
                     if (cerveza.isSelected()) {
+                        opcionesElegidas.add("cerveza");
                         JOptionPane.showConfirmDialog(pnl,
                                 "PROHIBIDA LA VENTA DE BEBIDAS ALCOHÓLICAS A MENORES DE 18 AÑOS! ERES MAYOR DE EDAD?", // Texto del mensaje
                                 "Confirma tu edad", // Título
                                 JOptionPane.YES_NO_OPTION);
                     }
 
+                    //guardamos las opciones elegidas para imprimirlas mas tarde
+                    if (pollo.isSelected())
+                        opcionesElegidas.add("pollo");
+                    if (cerdo.isSelected())
+                        opcionesElegidas.add("cerdo");
+                    if (normal.isSelected())
+                        opcionesElegidas.add("pan normal");
+                    if (integral.isSelected())
+                        opcionesElegidas.add("pan integral");
+                    if (centeno.isSelected())
+                        opcionesElegidas.add("centeno");
+                    if (cola.isSelected())
+                        opcionesElegidas.add("cola");
+                    if (fritas.isSelected())
+                        opcionesElegidas.add("patatas fritas");
+                    if (gajo.isSelected())
+                        opcionesElegidas.add("patatas gajo");
+                    if (naranja.isSelected())
+                        opcionesElegidas.add("refresco naranja");
+                    if (limon.isSelected())
+                        opcionesElegidas.add("refresco limon");
+                    if (agua.isSelected())
+                        opcionesElegidas.add("agua");
+                    if (repartoDomicilio.isSelected())
+                        opcionesElegidas.add("reparto a domicilio");
+
+                    String listaOpciones = String.join(", ", opcionesElegidas);//convert an ArrayList to a string
+
                     //imprimimos la informacion de pedido con todos los precios
-                    textAreaInfoPedido.setText("Precio Menu: €" + String.valueOf(precioTotal) + "\nOpciones elegidas: " + "\nIVA: €" + String.valueOf(IVA) + "\nPrecio Final(IVA incluido): €" + String.valueOf(precioConIVA));
+                    textAreaInfoPedido.setText("Precio Menu: €" + String.valueOf(precioTotal) + "\nOpciones elegidas: " + listaOpciones+ "\nIVA: €" + String.valueOf(IVA) + "\nPrecio Final(IVA incluido): €" + String.valueOf(precioConIVA));
 
                 } catch (Exception ex) {
                     ex.printStackTrace();
