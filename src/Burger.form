@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Burger">
+  <grid id="27dc6" binding="pnl" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="538" height="585"/>
+    </constraints>
+    <properties>
+      <background color="-1"/>
+      <visible value="true"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="dd335" class="javax.swing.JMenuBar" binding="MenuBar" layout-manager="GridLayoutManager" row-count="8" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints border-constraint="North"/>
+        <properties>
+          <background color="-1"/>
+          <font size="28"/>
+          <margin top="0" left="0" bottom="0" right="0"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="8afd3" class="javax.swing.JLabel" binding="logo">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <icon value="logo-burger-king.png"/>
+              <opaque value="false"/>
+              <text value=""/>
+              <visible value="true"/>
+            </properties>
+          </component>
+          <grid id="88bac" class="javax.swing.JMenu" binding="MenuPrincipalBurger" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <actionCommand value="       Elige tu menu (€8+)        ▼      "/>
+              <font size="22"/>
+              <label value="       Elige tu menu (€8+)        ▼"/>
+              <margin top="30" left="30" bottom="30" right="30"/>
+              <selected value="false"/>
+              <text value="       Elige tu menu (€8+)        ▼"/>
+            </properties>
+            <border type="etched"/>
+            <children>
+              <grid id="fa7df" class="javax.swing.JMenu" binding="MenuCarne" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties>
+                  <font size="22"/>
+                  <text value="Elige el tipo de carne"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="6c7bc" class="javax.swing.JRadioButtonMenuItem" binding="pollo">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <selected value="true"/>
+                      <text value="pollo"/>
+                    </properties>
+                  </component>
+                  <component id="f9206" class="javax.swing.JRadioButtonMenuItem" binding="cerdo">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="cerdo"/>
+                    </properties>
+                  </component>
+                  <component id="95233" class="javax.swing.JRadioButtonMenuItem" binding="ternera">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="ternera (+1€)"/>
+                    </properties>
+                  </component>
+                  <component id="1aec1" class="javax.swing.JRadioButtonMenuItem" binding="vegana">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="vegana (+1€)"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="e2805" class="javax.swing.JMenu" binding="MenuPan" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties>
+                  <font size="22"/>
+                  <text value="Elige el tipo de pan"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="668a1" class="javax.swing.JRadioButtonMenuItem" binding="normal">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <selected value="true"/>
+                      <text value="normal"/>
+                    </properties>
+                  </component>
+                  <component id="f384a" class="javax.swing.JRadioButtonMenuItem" binding="integral">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="integral"/>
+                    </properties>
+                  </component>
+                  <component id="b2c5b" class="javax.swing.JRadioButtonMenuItem" binding="centeno">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="centeno"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="b8f40" class="javax.swing.JMenu" binding="MenuExtras" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties>
+                  <font size="22"/>
+                  <text value="Anade extras"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="5be23" class="javax.swing.JCheckBoxMenuItem" binding="dobleOpcional">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="Hamburguesa doble (+2 €)"/>
+                    </properties>
+                  </component>
+                  <component id="9b2bc" class="javax.swing.JCheckBoxMenuItem" binding="quesoOpcional">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="Extra de queso (+0,50 €)"/>
+                    </properties>
+                  </component>
+                  <component id="9e4d0" class="javax.swing.JCheckBoxMenuItem" binding="patatasOpcional">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="Extra de patatas (+1 €)"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="1e592" class="javax.swing.JMenu" binding="MenuPatatas" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties>
+                  <font size="22"/>
+                  <text value="Elige el tipo de patatas"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="371ca" class="javax.swing.JRadioButtonMenuItem" binding="fritas">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <selected value="true"/>
+                      <text value="fritas"/>
+                    </properties>
+                  </component>
+                  <component id="c126f" class="javax.swing.JRadioButtonMenuItem" binding="gajo">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="gajo"/>
+                    </properties>
+                  </component>
+                  <component id="a18ac" class="javax.swing.JRadioButtonMenuItem" binding="caseras">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="caseras (+1 €)"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="8b7fd" class="javax.swing.JMenu" binding="MenuBebidas" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties>
+                  <font size="22"/>
+                  <text value="Elige tu bebida"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="cce55" class="javax.swing.JRadioButtonMenuItem" binding="cola">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="refresco de cola"/>
+                    </properties>
+                  </component>
+                  <component id="320a" class="javax.swing.JRadioButtonMenuItem" binding="naranja">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="refresco de naranja"/>
+                    </properties>
+                  </component>
+                  <component id="98e75" class="javax.swing.JRadioButtonMenuItem" binding="limon">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="refresco de limon"/>
+                    </properties>
+                  </component>
+                  <component id="9195" class="javax.swing.JRadioButtonMenuItem" binding="agua">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <selected value="true"/>
+                      <text value="agua"/>
+                    </properties>
+                  </component>
+                  <component id="6e34" class="javax.swing.JRadioButtonMenuItem" binding="cerveza">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="cerveza"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="29f0b" class="javax.swing.JMenu" binding="MenuReparto" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties>
+                  <font size="22"/>
+                  <text value="Reparto/Recogida"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="2e773" class="javax.swing.JRadioButtonMenuItem" binding="repartoDomicilio">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <selected value="true"/>
+                      <text value="Reparto a domicilio (precio estándar)"/>
+                    </properties>
+                  </component>
+                  <component id="d3f05" class="javax.swing.JRadioButtonMenuItem" binding="recogidaLocal">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <selected value="false"/>
+                      <text value="recogida en el local (-20% descuento)"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="8024e" class="javax.swing.JMenu" binding="MenuSalsas" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties>
+                  <font size="22"/>
+                  <label value="Salsas (+0,50 cada una)"/>
+                  <text value="Salsas (+0,50 cada una)"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="84b17" class="javax.swing.JLabel" binding="labelKetchup">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="Ketchup"/>
+                    </properties>
+                  </component>
+                  <component id="8e49b" class="javax.swing.JSpinner" binding="spinnerKetchup">
+                    <constraints/>
+                    <properties>
+                      <editor value=""/>
+                      <name value=""/>
+                    </properties>
+                  </component>
+                  <component id="d3b88" class="javax.swing.JLabel" binding="labelBarbacoa">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value=" Barbacoa"/>
+                    </properties>
+                  </component>
+                  <component id="a1969" class="javax.swing.JSpinner" binding="spinnerBarbacoa">
+                    <constraints/>
+                    <properties/>
+                  </component>
+                  <component id="8f349" class="javax.swing.JLabel" binding="labelMostaza">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="Mostaza"/>
+                    </properties>
+                  </component>
+                  <component id="bfb8d" class="javax.swing.JSpinner" binding="spinnerMostaza">
+                    <constraints/>
+                    <properties/>
+                  </component>
+                  <component id="2504b" class="javax.swing.JLabel" binding="labelThai">
+                    <constraints/>
+                    <properties>
+                      <font size="16"/>
+                      <text value="Thai"/>
+                      <toolTipText value=""/>
+                    </properties>
+                  </component>
+                  <component id="6248b" class="javax.swing.JSpinner" binding="spinnerThai">
+                    <constraints/>
+                    <properties>
+                      <toolTipText value=""/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <vspacer id="597fb">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <vspacer id="a5f49">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <vspacer id="dae99">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <component id="f07da" class="javax.swing.JButton" binding="btnPedido">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-16752216"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
+              <font size="18"/>
+              <foreground color="-1"/>
+              <opaque value="true"/>
+              <text value="Finaliza Pedido"/>
+            </properties>
+          </component>
+          <vspacer id="3c0c5">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <component id="cd028" class="javax.swing.JTextArea" binding="textAreaInfoPedido">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+              <font size="22"/>
+              <visible value="true"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+  <buttonGroups>
+    <group name="buttonGroupCarne">
+      <member id="6c7bc"/>
+      <member id="f9206"/>
+      <member id="95233"/>
+      <member id="1aec1"/>
+    </group>
+    <group name="buttonGroupPan">
+      <member id="668a1"/>
+      <member id="f384a"/>
+      <member id="b2c5b"/>
+    </group>
+    <group name="buttonGroupPatatas">
+      <member id="371ca"/>
+      <member id="c126f"/>
+      <member id="a18ac"/>
+    </group>
+    <group name="buttonGroupRefresco">
+      <member id="cce55"/>
+      <member id="320a"/>
+      <member id="98e75"/>
+      <member id="9195"/>
+      <member id="6e34"/>
+    </group>
+    <group name="buttonGroupReparto">
+      <member id="2e773"/>
+      <member id="d3f05"/>
+    </group>
+  </buttonGroups>
+</form>
