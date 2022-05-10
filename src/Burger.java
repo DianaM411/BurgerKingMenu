@@ -57,13 +57,19 @@ public class Burger extends JFrame {
         this.setContentPane(pnl);
         this.pack();
 
+        //ponemos el minimo value de 0 en los spinners
+        spinnerKetchup.setModel(new SpinnerNumberModel(0, 0, 10, 1));
+        spinnerBarbacoa.setModel(new SpinnerNumberModel(0, 0, 10, 1));
+        spinnerMostaza.setModel(new SpinnerNumberModel(0, 0, 10, 1));
+        spinnerThai.setModel(new SpinnerNumberModel(0, 0, 10, 1));
 
         btnPedido.addActionListener(new ActionListener() {
             @Override
             //esto pasa cuando le damos al boton
             public void actionPerformed(ActionEvent e) {
                 try {
-                    double precioTotal = 8;//el menu basico vale 8 euros
+                    final double MENUBASE=8;//el menu basico vale 8 euros
+                    double precioTotal = MENUBASE;
                     ArrayList opcionesElegidas = new ArrayList<>();
 
                     //si elige las opciones con coste extra se le anade esto al precioTotal
@@ -126,8 +132,9 @@ public class Burger extends JFrame {
 
 
                     //calculamos el precio con IVA
-                    double IVA = 0.21 * precioTotal;
-                    double precioConIVA = precioTotal + IVA;
+                    final double IVA= 0.21;
+                    double importeIVA = IVA * precioTotal;
+                    double precioConIVA = precioTotal + importeIVA;
 
                     //si elige cerveza comprobamos que es mayor de edad
                     if (cerveza.isSelected()) {
@@ -167,7 +174,7 @@ public class Burger extends JFrame {
                     String listaOpciones = String.join(", ", opcionesElegidas);//convert an ArrayList to a string
 
                     //imprimimos la informacion de pedido con todos los precios
-                    textAreaInfoPedido.setText("Precio Menu: €" + String.valueOf(precioTotal) + "\nOpciones elegidas: " + listaOpciones+ "\nIVA: €" + String.valueOf(IVA) + "\nPrecio Final(IVA incluido): €" + String.valueOf(precioConIVA));
+                    textAreaInfoPedido.setText("Precio Menu: €" + String.valueOf(precioTotal) + "\nOpciones elegidas: " + listaOpciones+ "\nIVA: €" + String.valueOf(importeIVA) + "\nPrecio Final(IVA incluido): €" + String.valueOf(precioConIVA));
 
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -180,6 +187,7 @@ public class Burger extends JFrame {
     public static void main(String[] args) {
         JFrame frame = new Burger("Welcome to BurgerKing");
         frame.setVisible(true);
+
     }
 }
 
